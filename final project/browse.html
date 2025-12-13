@@ -1,15 +1,182 @@
-<!DOCTYPE html>
+<!doctype html>
+<html lang="en">
 <head>
-	<link rel="stylesheet" href="styles.css">
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Browse Listings | Comet Market</title>
+  <link rel="stylesheet" href="styles.css">
 </head>
-	<nav class="menu">
-  <a class="logo" href="index.html">Midterm</a>
+<body>
 
-  <ul class="menu-links">
-    <li><a href="index.html">Home</a></li>
-    <li><a href="browse.html">browse</a></li>
-    <li><a href="detail.html">Detail</a></li>
-    <li><a href="post.html">post</a></li>
-    <li><a href="contact.html">Contact</a></li>
-  </ul>
-  </nav>
+<header class="site-header">
+  <div class="wrap topbar">
+    <a class="brand" href="index.html">
+      <div class="badge" aria-hidden="true"></div>
+      <div>
+        <h1>Comet Market</h1>
+        <span>Browse listings</span>
+      </div>
+    </a>
+
+    <nav class="nav" aria-label="Main">
+      <a href="index.html">Home</a>
+      <a href="browse.html">Browse</a>
+      <a href="post.html">Post</a>
+      <a href="contact.html">Contact</a>
+    </nav>
+  </div>
+</header>
+
+<main class="wrap">
+  <div class="page-head">
+    <h2>Browse</h2>
+    <p>Use categories and search to find stuff from other Comets.</p>
+  </div>
+
+  <section class="browse-grid">
+    <aside class="card filters">
+      <h3>Filters</h3>
+
+      <div class="filter-row">
+        <label for="cat">Category</label>
+        <select id="cat">
+          <option>All</option>
+          <option>Household</option>
+          <option>Textbooks</option>
+          <option>School Supplies</option>
+          <option>Transportation</option>
+          <option>Electronics</option>
+        </select>
+      </div>
+
+      <div class="filter-row">
+        <label for="min">Min price</label>
+        <input id="min" type="text" placeholder="$0">
+      </div>
+
+      <div class="filter-row">
+        <label for="max">Max price</label>
+        <input id="max" type="text" placeholder="$200">
+      </div>
+
+      <div class="filter-row">
+        <label for="pick">Pickup</label>
+        <select id="pick">
+          <option>Any</option>
+          <option>On campus</option>
+          <option>Near campus</option>
+        </select>
+      </div>
+
+      <p style="margin-top:14px;">
+        <button class="btn" type="button">Apply</button>
+      </p>
+
+      <div class="smallbox">
+        Tip: Keep your listing title short + add a clear price.
+      </div>
+    </aside>
+
+    <div class="card results">
+      <div class="searchbar">
+        <input type="text" placeholder="Search: sofa, lamp, bike, calculator...">
+        <button class="btn alt" type="button">Search</button>
+      </div>
+
+      <div class="tags" aria-label="Quick categories">
+        <a class="tag active" href="browse.html">All</a>
+        <a class="tag" href="browse.html">Household</a>
+        <a class="tag" href="browse.html">Textbooks</a>
+        <a class="tag" href="browse.html">Supplies</a>
+        <a class="tag" href="browse.html">Transportation</a>
+        <a class="tag" href="browse.html">Electronics</a>
+      </div>
+
+      <div class="grid">
+        <article class="card item">
+          <img src="images/sofa.jpg" alt="Gray sofa">
+          <div class="info">
+            <h4>Small Gray Sofa</h4>
+            <div class="price">$80</div>
+            <div class="meta">Household • Near campus</div>
+            <p style="margin:10px 0 0;">
+              <a class="btn" href="detail.html">Details</a>
+            </p>
+          </div>
+        </article>
+
+        <article class="card item">
+          <img src="images/lamp.jpg" alt="Simple desk lamp">
+          <div class="info">
+            <h4>Desk Lamp</h4>
+            <div class="price">$12</div>
+            <div class="meta">Household • On campus</div>
+            <p style="margin:10px 0 0;">
+              <a class="btn" href="detail.html">Details</a>
+            </p>
+          </div>
+        </article>
+
+        <article class="card item">
+          <img src="images/textbook.jpg" alt="Textbook stack">
+          <div class="info">
+            <h4>Calculus Textbook</h4>
+            <div class="price">$25</div>
+            <div class="meta">Textbooks • Like new</div>
+            <p style="margin:10px 0 0;">
+              <a class="btn" href="detail.html">Details</a>
+            </p>
+          </div>
+        </article>
+
+        <article class="card item">
+          <img src="images/bike.jpg" alt="Bike parked outside">
+          <div class="info">
+            <h4>Campus Bike</h4>
+            <div class="price">$120</div>
+            <div class="meta">Transportation • Good condition</div>
+            <p style="margin:10px 0 0;">
+              <a class="btn" href="detail.html">Details</a>
+            </p>
+          </div>
+        </article>
+
+        <article class="card item">
+          <img src="images/lamp.jpg" alt="Coffee machine on counter">
+          <div class="info">
+            <h4>Coffee Machine</h4>
+            <div class="price">$20</div>
+            <div class="meta">Household • Works great</div>
+            <p style="margin:10px 0 0;">
+              <a class="btn" href="detail.html">Details</a>
+            </p>
+          </div>
+        </article>
+
+        <article class="card item">
+          <img src="images/textbook.jpg" alt="Notebook and pens">
+          <div class="info">
+            <h4>Notebook + Pens Bundle</h4>
+            <div class="price">$8</div>
+            <div class="meta">School supplies • On campus</div>
+            <p style="margin:10px 0 0;">
+              <a class="btn" href="detail.html">Details</a>
+            </p>
+          </div>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <footer>
+    <div class="card footbox">
+      <div>
+        <strong>Contact:</strong> cometmarket@utdallas.edu (example) • <strong>Phone:</strong> (000) 000-0000
+      </div>
+      <div>© 2025 Comet Market • UTD Student Project</div>
+    </div>
+  </footer>
+</main>
+
+</body>
+</html>
