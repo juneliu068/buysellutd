@@ -1,0 +1,82 @@
+
+/* fjord-one-regular - latin */
+@font-face {
+  font-display: swap; 
+  font-family: 'Fjord One';
+  font-style: normal;
+  font-weight: 400;
+  src: url('fonts/fjord-one-v22-latin-regular.woff2') format('woff2');
+}
+
+@font-face {
+  font-display: swap; 
+  font-family: 'Geologica';
+  font-style: normal;
+  font-weight: 400;
+  src: url('fonts/geologica-v5-latin-regular.woff2') format('woff2');
+}
+
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+/* pg and color palette */
+body {
+  background: #f6f8ff;
+  color: #1f2937;
+
+  /* Fluid base */
+  font-size: clamp(16px, 15px + 0.4vw, 18px);
+  line-height: 1.7;
+
+  font-family: "Geologica", Arial, sans-serif;
+
+  max-width: 900px;
+  margin: 30px auto;
+  padding: 24px;
+
+  background: #ffffff;
+  border: 2px solid #d6ddff;
+  border-radius: 10px;
+}
+
+/* Headings */
+h1, h2 {
+  font-family: "Fjord One", serif;
+  color: #2b59ff;
+  line-height: 1.2;
+  margin-bottom: 10px;
+}
+
+
+h1 {
+  font-size: 3.05em;
+  letter-spacing: 0.5px;   
+}
+
+h2 {
+  font-size: 2.44em;
+  margin-top: 18px;
+}
+
+p {
+  margin-top: 10px;
+  margin-bottom: 14px;
+  max-width: 70ch;         
+}
+
+strong {
+  font-weight: 700;
+}
+
+ul {
+  margin-left: 22px;
+  margin-bottom: 16px;
+}
+
+li {
+  margin-top: 6px;
+}
