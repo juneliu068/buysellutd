@@ -1,10 +1,7 @@
-/* Nav (Flexbox) */
-.menu {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
 
-  flex-wrap: wrap;          /* helps on small screens */
+
+
+  flex-wrap: wrap;          
   gap: 12px;
 
   padding: 16px;
