@@ -1,15 +1,109 @@
-<!DOCTYPE html>
+<!doctype html>
+<html lang="en">
 <head>
-	<link rel="stylesheet" href="styles.css">
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Post an Item | Comet Market</title>
+  <link rel="stylesheet" href="styles.css">
 </head>
-	<nav class="menu">
-  <a class="logo" href="index.html">Midterm</a>
+<body>
 
-  <ul class="menu-links">
-    <li><a href="index.html">Home</a></li>
-    <li><a href="browse.html">browse</a></li>
-    <li><a href="detail.html">Detail</a></li>
-    <li><a href="post.html">post</a></li>
-    <li><a href="contact.html">Contact</a></li>
-  </ul>
-</nav>
+<header class="site-header">
+  <div class="wrap topbar">
+    <a class="brand" href="index.html">
+      <div class="badge" aria-hidden="true"></div>
+      <div>
+        <h1>Comet Market</h1>
+        <span>Create a listing</span>
+      </div>
+    </a>
+
+    <nav class="nav" aria-label="Main">
+      <a href="index.html">Home</a>
+      <a href="browse.html">Browse</a>
+      <a href="post.html">Post</a>
+      <a href="contact.html">Contact</a>
+    </nav>
+  </div>
+</header>
+
+<main class="wrap">
+  <div class="page-head">
+    <h2>Post an Item</h2>
+    <p>Fill this out to create a listing (form is beginner + works as a layout).</p>
+  </div>
+
+  <section class="form-grid">
+    <div class="card form-card">
+      <form>
+        <label for="title">Title</label>
+        <input id="title" type="text" placeholder="Ex: Small Gray Sofa">
+
+        <label for="price">Price</label>
+        <input id="price" type="text" placeholder="$">
+
+        <label for="category">Category</label>
+        <select id="category">
+          <option>Household</option>
+          <option>Textbooks</option>
+          <option>School Supplies</option>
+          <option>Transportation</option>
+          <option>Electronics</option>
+        </select>
+
+        <label for="condition">Condition</label>
+        <select id="condition">
+          <option>New</option>
+          <option>Like new</option>
+          <option>Good</option>
+          <option>Fair</option>
+        </select>
+
+        <label for="pickup">Pickup</label>
+        <select id="pickup">
+          <option>On campus</option>
+          <option>Near campus</option>
+        </select>
+
+        <label for="desc">Description</label>
+        <textarea id="desc" rows="5" placeholder="Write a short description..."></textarea>
+
+        <label for="photo">Photo (optional)</label>
+        <input id="photo" type="file">
+
+        <p style="margin-top:14px;">
+          <button class="btn" type="submit">Post Listing</button>
+          <a class="btn alt" href="browse.html" style="margin-left:8px;">View Browse</a>
+        </p>
+      </form>
+    </div>
+
+    <aside class="card side-info">
+      <h3>Posting tips</h3>
+      <ul style="margin:0; padding-left:18px;">
+        <li>Use 1 clear photo</li>
+        <li>Add size info for furniture</li>
+        <li>Be honest about condition</li>
+        <li>Meet in a public place</li>
+      </ul>
+
+      <div class="smallbox" style="margin-top:14px;">
+        If you want, you can add a real UTD email here later.
+      </div>
+    </aside>
+  </section>
+
+  <footer>
+    <div class="card footbox">
+      <div>
+        <strong>Contact:</strong> cometmarket@utdallas.edu (example) • <strong>Phone:</strong> (000) 000-0000
+      </div>
+      <div>© 2025 Comet Market • UTD Student Project</div>
+    </div>
+  </footer>
+</main>
+
+</body>
+</html>
+
+
