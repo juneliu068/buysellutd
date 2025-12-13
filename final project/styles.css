@@ -1,9 +1,7 @@
-/* ========== fonts (Google Webfonts Helper) ==========
-   1) Go to Google Webfonts Helper
-   2) Download "Inter" + "Fjord One" (or any 2 fonts you like)
-   3) Put the .woff2 files in /fonts
-   4) Update the filenames below to match yours
-*/
+/* -----------------------------
+   FONTS (Google Webfonts Helper)
+   Put your downloaded .woff2 files in /fonts
+-------------------------------- */
 @font-face {
   font-family: "Inter";
   src: url("fonts/inter-regular.woff2") format("woff2");
@@ -26,370 +24,209 @@
   font-display: swap;
 }
 
-/* ========== color palette ========== */
-:root{
-  --ink: #393E41;
-  --green: #7FB069;
-  --peach: #FFDAC6;
-  --orange: #FA9500;
-  --redorange: #EB6424;
-  --white: #ffffff;
-
-  /* ========== fluid type scale (clamp) ==========
-     Beginner-friendly version: you can keep this as-is.
-  */
-  --step--1: clamp(0.85rem, 0.83rem + 0.2vw, 0.95rem);
-  --step-0:  clamp(1.00rem, 0.95rem + 0.4vw, 1.15rem);
-  --step-1:  clamp(1.20rem, 1.10rem + 0.8vw, 1.55rem);
-  --step-2:  clamp(1.45rem, 1.25rem + 1.2vw, 2.00rem);
-  --step-3:  clamp(1.75rem, 1.45rem + 1.8vw, 2.60rem);
-  --step-4:  clamp(2.10rem, 1.60rem + 2.6vw, 3.25rem);
-
-  --radius: 14px;
-  --shadow: 0 10px 25px rgba(0,0,0,0.10);
-}
-
-*{ box-sizing: border-box; }
+/* -----------------------------
+   FLUID TYPE (very simple)
+-------------------------------- */
 body{
-  margin: 0;
+  /* fluid base text size */
+  font-size: clamp(16px, 1.2vw + 12px, 20px);
   font-family: "Inter", Arial, sans-serif;
-  font-size: var(--step-0);
-  color: var(--ink);
-  background:
-    radial-gradient(circle at 20% 10%, rgba(255,218,198,0.75), transparent 55%),
-    radial-gradient(circle at 90% 30%, rgba(127,176,105,0.35), transparent 55%),
-    linear-gradient(180deg, #fff 0%, #fff 55%, rgba(255,218,198,0.25) 100%);
+  margin: 0;
+  color: #393E41;
+  background: #FFDAC6; /* palette */
 }
 
-a{ color: inherit; }
-img{ max-width: 100%; display: block; }
+/* fluid headings */
+h1{ font-size: clamp(22px, 2vw + 14px, 34px); margin: 0; }
+h2{ font-size: clamp(20px, 1.8vw + 12px, 30px); margin: 0 0 6px; }
+h3{ font-size: clamp(18px, 1.4vw + 12px, 24px); margin: 0 0 10px; }
 
-/* layout wrapper */
+/* -----------------------------
+   BASIC LINKS
+-------------------------------- */
+a{ color: #393E41; }
+a:hover{ color: #EB6424; }
+
+/* -----------------------------
+   PAGE WRAPPER
+-------------------------------- */
 .wrap{
-  width: min(1100px, 92%);
+  width: 92%;
+  max-width: 1100px;
   margin: 0 auto;
 }
 
-/* header + nav (consistent) */
-.site-header{
-  position: sticky;
-  top: 0;
-  z-index: 5;
-  background: rgba(255,255,255,0.92);
-  backdrop-filter: blur(10px);
-  border-bottom: 1px solid rgba(57,62,65,0.12);
+/* -----------------------------
+   HEADER + NAV (Flexbox)
+-------------------------------- */
+header{
+  background: #393E41;
+  padding: 14px 0;
 }
 .topbar{
-  display: flex;
+  display: flex;            /* flex requirement */
   align-items: center;
   justify-content: space-between;
   gap: 12px;
-  padding: 14px 0;
 }
+
 .brand{
+  text-decoration: none;
+  color: white;
   display: flex;
   align-items: center;
   gap: 10px;
-  text-decoration: none;
 }
-.badge{
-  width: 34px;
-  height: 34px;
-  border-radius: 10px;
-  background: linear-gradient(135deg, var(--orange), var(--redorange));
-  box-shadow: 0 8px 18px rgba(235,100,36,0.25);
+.logo-box{
+  width: 32px;
+  height: 32px;
+  border-radius: 8px;
+  background: #FA9500; /* palette */
 }
-.brand h1{
-  margin: 0;
+.brand-title{
   font-family: "Fjord One", serif;
-  font-size: var(--step-1);
-  letter-spacing: 0.2px;
-}
-.brand span{
-  font-size: var(--step--1);
-  opacity: 0.8;
-  display: block;
-  margin-top: 2px;
+  letter-spacing: 0.3px;
 }
 
-.nav{
-  display: flex;
-  flex-wrap: wrap;
+nav{
+  display: flex;            /* flex requirement */
   gap: 8px;
+  flex-wrap: wrap;
 }
-.nav a{
+nav a{
+  color: white;
   text-decoration: none;
-  padding: 8px 10px;
+  padding: 7px 10px;
   border-radius: 999px;
-  border: 1px solid rgba(57,62,65,0.12);
-  background: #fff;
-  font-size: var(--step--1);
+  background: rgba(255,255,255,0.10);
 }
-.nav a:hover{
-  border-color: rgba(57,62,65,0.28);
+nav a:hover{
+  background: rgba(255,255,255,0.25);
 }
 
-/* page title area */
-.page-head{
-  padding: 24px 0 10px;
-}
-.page-head h2{
-  margin: 0 0 6px;
-  font-size: var(--step-3);
-  font-family: "Fjord One", serif;
-}
-.page-head p{
-  margin: 0;
-  max-width: 70ch;
-  opacity: 0.85;
-}
-
-/* cards / sections */
-.card{
-  background: rgba(255,255,255,0.95);
-  border: 1px solid rgba(57,62,65,0.12);
-  border-radius: var(--radius);
-  box-shadow: var(--shadow);
-}
+/* -----------------------------
+   SECTIONS + CARDS
+-------------------------------- */
 .section{
-  padding: 18px;
+  margin: 16px 0;
+}
+.card{
+  background: white;
+  border-radius: 12px;
+  padding: 14px;
+  border: 2px solid #7FB069; /* palette */
 }
 
-/* buttons + one simple animation */
+/* -----------------------------
+   BUTTON (simple hover animation)
+-------------------------------- */
 .btn{
   display: inline-block;
+  padding: 10px 12px;
+  border-radius: 10px;
+  background: #393E41;
+  color: white;
   text-decoration: none;
-  padding: 10px 14px;
-  border-radius: 12px;
-  background: var(--ink);
-  color: #fff;
-  border: 0;
   font-weight: 700;
+  border: none;
   cursor: pointer;
-  transition: transform 160ms ease, box-shadow 160ms ease;
+
+  /* simple animation */
+  transition: background 0.2s;
 }
 .btn:hover{
-  transform: translateY(-2px);
-  box-shadow: 0 10px 20px rgba(57,62,65,0.20);
+  background: #EB6424; /* palette */
 }
-.btn.alt{
-  background: var(--green);
-  color: var(--ink);
+.btn-green{
+  background: #7FB069;
+  color: #393E41;
 }
-.btn.warn{
-  background: var(--redorange);
+.btn-green:hover{
+  background: #FA9500;
 }
 
-/* inputs */
-input, select, textarea{
+/* -----------------------------
+   HOME featured grid (CSS Grid)
+-------------------------------- */
+.grid3{
+  display: grid;            /* grid requirement */
+  grid-template-columns: repeat(3, 1fr);
+  gap: 12px;
+}
+.item-card img{
   width: 100%;
-  padding: 10px 12px;
-  border-radius: 12px;
-  border: 1px solid rgba(57,62,65,0.18);
-  font: inherit;
-  background: #fff;
-}
-label{
-  display: block;
-  font-size: var(--step--1);
-  margin: 10px 0 6px;
-  opacity: 0.85;
-}
-
-/* FOOTER (credibility on every page) */
-footer{
-  margin-top: 28px;
-  padding: 22px 0 34px;
-  font-size: var(--step--1);
-  opacity: 0.9;
-}
-footer .footbox{
-  display: flex;
-  flex-wrap: wrap;
-  gap: 12px;
-  align-items: center;
-  justify-content: space-between;
-  padding: 14px 16px;
-}
-
-/* ========== HOME ========== */
-.hero{
-  display: grid;
-  grid-template-columns: 1.15fr 0.85fr;
-  gap: 14px;
-  margin: 14px 0 16px;
-}
-.hero .big{
-  padding: 18px;
-}
-.hero h3{
-  margin: 0 0 10px;
-  font-size: var(--step-4);
-  font-family: "Fjord One", serif;
-}
-.hero p{
-  margin: 0 0 14px;
-  max-width: 65ch;
-}
-.hero .mini{
-  padding: 18px;
-  display: grid;
-  gap: 12px;
-}
-.pills{
-  display: flex;
-  flex-wrap: wrap;
-  gap: 8px;
-}
-.pill{
-  padding: 8px 10px;
-  border-radius: 999px;
-  background: rgba(255,218,198,0.6);
-  border: 1px solid rgba(57,62,65,0.10);
-  font-size: var(--step--1);
-}
-
-/* ========== BROWSE (matches wireframe vibe: filters + grid) ========== */
-.browse-grid{
-  display: grid;
-  grid-template-columns: 290px 1fr;
-  gap: 14px;
-  margin: 12px 0 18px;
-}
-.filters{
-  padding: 16px;
-}
-.filters h3{
-  margin: 0 0 10px;
-  font-size: var(--step-1);
-}
-.filter-row{ margin-top: 10px; }
-
-.results{
-  padding: 16px;
-}
-.searchbar{
-  display: flex;
-  gap: 8px;
-  align-items: center;
-  margin-bottom: 12px;
-}
-.searchbar input{
-  flex: 1;
-}
-.tags{
-  display: flex;
-  flex-wrap: wrap;
-  gap: 8px;
-  margin-bottom: 14px;
-}
-.tag{
-  border: 1px solid rgba(57,62,65,0.14);
-  background: rgba(255,255,255,0.9);
-  border-radius: 999px;
-  padding: 6px 10px;
-  font-size: var(--step--1);
-  text-decoration: none;
-}
-.tag.active{
-  background: rgba(127,176,105,0.25);
-  border-color: rgba(127,176,105,0.6);
-}
-
-.grid{
-  display: grid;
-  grid-template-columns: repeat(3, minmax(0, 1fr));
-  gap: 12px;
-}
-.item{
-  overflow: hidden;
-}
-.item img{
-  height: 160px;
-  width: 100%;
+  height: 150px;
   object-fit: cover;
-  border-bottom: 1px solid rgba(57,62,65,0.10);
-}
-.item .info{
-  padding: 12px;
-}
-.item h4{
-  margin: 0 0 6px;
-  font-size: var(--step-0);
+  border-radius: 10px;
 }
 .price{
   font-weight: 700;
-  color: var(--redorange);
-}
-.meta{
-  margin-top: 6px;
-  font-size: var(--step--1);
-  opacity: 0.85;
+  color: #EB6424;
 }
 
-/* ========== DETAIL (image + info) ========== */
-.detail-grid{
+/* -----------------------------
+   BROWSE layout (CSS Grid)
+-------------------------------- */
+.browse-layout{
+  display: grid;            /* grid requirement */
+  grid-template-columns: 260px 1fr;
+  gap: 12px;
+}
+.listings-grid{
   display: grid;
-  grid-template-columns: 1fr 0.9fr;
-  gap: 14px;
-  margin: 12px 0 18px;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 12px;
 }
-.detail-photo{
-  overflow: hidden;
-}
-.detail-photo img{
+
+/* simple form styles */
+label{ display:block; margin: 10px 0 6px; }
+input, select, textarea{
   width: 100%;
-  height: 380px;
-  object-fit: cover;
-}
-.detail-info{
-  padding: 16px;
-}
-.detail-info h3{
-  margin: 0 0 8px;
-  font-size: var(--step-2);
-}
-.detail-actions{
-  display: flex;
-  flex-wrap: wrap;
-  gap: 10px;
-  margin: 12px 0 8px;
-}
-.smallbox{
-  margin-top: 12px;
-  padding: 12px;
-  border-radius: 12px;
-  background: rgba(255,218,198,0.45);
-  border: 1px solid rgba(57,62,65,0.10);
-  font-size: var(--step--1);
+  padding: 10px;
+  border-radius: 10px;
+  border: 2px solid #393E41;
+  font: inherit;
 }
 
-/* ========== CONTACT + POST forms ========== */
-.form-grid{
+/* -----------------------------
+   DETAIL layout (simple)
+-------------------------------- */
+.detail-layout{
   display: grid;
-  grid-template-columns: 1fr 0.85fr;
-  gap: 14px;
-  margin: 12px 0 18px;
+  grid-template-columns: 1fr 1fr;
+  gap: 12px;
 }
-.form-card{
-  padding: 16px;
-}
-.side-info{
-  padding: 16px;
-}
-.side-info h3{
-  margin: 0 0 8px;
-  font-size: var(--step-1);
+.detail-layout img{
+  width: 100%;
+  height: 320px;
+  object-fit: cover;
+  border-radius: 12px;
 }
 
-/* responsive */
+/* -----------------------------
+   FOOTER (credibility)
+-------------------------------- */
+footer{
+  margin: 18px 0 30px;
+}
+.footer-box{
+  background: #393E41;
+  color: white;
+  border-radius: 12px;
+  padding: 14px;
+}
+
+/* -----------------------------
+   MOBILE
+-------------------------------- */
 @media (max-width: 900px){
-  .hero{ grid-template-columns: 1fr; }
-  .browse-grid{ grid-template-columns: 1fr; }
-  .grid{ grid-template-columns: repeat(2, minmax(0, 1fr)); }
-  .detail-grid{ grid-template-columns: 1fr; }
-  .form-grid{ grid-template-columns: 1fr; }
+  .grid3{ grid-template-columns: 1fr 1fr; }
+  .listings-grid{ grid-template-columns: 1fr 1fr; }
+  .browse-layout{ grid-template-columns: 1fr; }
+  .detail-layout{ grid-template-columns: 1fr; }
 }
 @media (max-width: 520px){
-  .grid{ grid-template-columns: 1fr; }
+  .grid3{ grid-template-columns: 1fr; }
+  .listings-grid{ grid-template-columns: 1fr; }
 }
+
