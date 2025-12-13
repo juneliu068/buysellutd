@@ -3,22 +3,19 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Comet Market | UTD Student Marketplace</title>
+  <title>Comet Market | Home</title>
   <link rel="stylesheet" href="styles.css">
 </head>
 <body>
 
-<header class="site-header">
+<header>
   <div class="wrap topbar">
     <a class="brand" href="index.html">
-      <div class="badge" aria-hidden="true"></div>
-      <div>
-        <h1>Comet Market</h1>
-        <span>UTD buy & sell for Comets</span>
-      </div>
+      <div class="logo-box"></div>
+      <div class="brand-title">Comet Market</div>
     </a>
 
-    <nav class="nav" aria-label="Main">
+    <nav>
       <a href="index.html">Home</a>
       <a href="browse.html">Browse</a>
       <a href="post.html">Post</a>
@@ -28,100 +25,53 @@
 </header>
 
 <main class="wrap">
-  <div class="page-head">
-    <h2>Buy & sell with other UTD students</h2>
-    <p>Find household items, textbooks, school supplies, electronics, and transportation. Meet in safe public spots on campus.</p>
-  </div>
 
-  <section class="hero">
-    <div class="card big section">
-      <h3>Save money. Declutter. Stay local.</h3>
-      <p>
-        Comet Market is a simple marketplace for UTD students to post items and buy from other Comets.
-        Big stuff like sofas, tables, chairs, mattresses, shelves, dishes, coffee machines, and decorations are perfect here.
-      </p>
-      <div class="pills" aria-label="Popular categories">
-        <div class="pill">Household</div>
-        <div class="pill">Textbooks</div>
-        <div class="pill">School Supplies</div>
-        <div class="pill">Transportation</div>
-        <div class="pill">Electronics</div>
-      </div>
-      <p style="margin-top:14px;">
-        <a class="btn" href="browse.html">Start Browsing</a>
-        <a class="btn alt" href="post.html" style="margin-left:8px;">Post an Item</a>
-      </p>
-    </div>
-
-    <div class="card mini">
-      <div class="card section">
-        <h3 style="margin:0 0 8px; font-size: var(--step-1);">Campus-friendly rules</h3>
-        <ul style="margin:0; padding-left:18px;">
-          <li>Use clear photos</li>
-          <li>Meet in public places</li>
-          <li>No scams—keep it simple</li>
-        </ul>
-      </div>
-
-      <div class="card section">
-        <h3 style="margin:0 0 8px; font-size: var(--step-1);">Quick links</h3>
-        <p style="margin:0 0 10px;">Want a fast look?</p>
-        <a class="btn warn" href="browse.html">Browse Listings</a>
-      </div>
-    </div>
+  <section class="section">
+    <h2>Buy & Sell for UTD Students</h2>
+    <p>
+      Comet Market is a marketplace for UTD students (Comets) to post and buy items.
+      Common items: sofas, tables, chairs, mattresses, dishes, coffee machines, decorations, shelves, textbooks,
+      school supplies, scooters, bikes, motorcycles, and electronics.
+    </p>
+    <a class="btn" href="browse.html">Browse Listings</a>
+    <a class="btn btn-green" href="post.html" style="margin-left:8px;">Post an Item</a>
   </section>
 
-  <section class="card section">
-    <h3 style="margin:0 0 10px; font-size: var(--step-2); font-family:'Fjord One',serif;">Featured today</h3>
+  <section class="section card">
+    <h3>Featured Listings</h3>
 
-    <div class="grid">
-      <article class="card item">
-        <img src="images/sofa.jpg" alt="Gray sofa on a living room floor">
-        <div class="info">
-          <h4>Small Gray Sofa</h4>
-          <div class="price">$80</div>
-          <div class="meta">Pickup near campus • Household</div>
-          <p style="margin:10px 0 0;">
-            <a class="btn" href="detail.html">View</a>
-          </p>
-        </div>
-      </article>
+    <div class="grid3">
+      <div class="item-card">
+        <img src="images/sofa.jpg" alt="Small sofa">
+        <p><strong>Small Sofa</strong> <span class="price">$80</span></p>
+        <a class="btn" href="detail.html">View</a>
+      </div>
 
-      <article class="card item">
-        <img src="images/textbook.jpg" alt="Textbook stack on a desk">
-        <div class="info">
-          <h4>Calculus Textbook</h4>
-          <div class="price">$25</div>
-          <div class="meta">Like new • Textbooks</div>
-          <p style="margin:10px 0 0;">
-            <a class="btn" href="detail.html">View</a>
-          </p>
-        </div>
-      </article>
+      <div class="item-card">
+        <img src="images/textbook.jpg" alt="Textbook">
+        <p><strong>Calculus Textbook</strong> <span class="price">$25</span></p>
+        <a class="btn" href="detail.html">View</a>
+      </div>
 
-      <article class="card item">
-        <img src="images/bike.jpg" alt="Bike parked outside">
-        <div class="info">
-          <h4>Campus Bike</h4>
-          <div class="price">$120</div>
-          <div class="meta">Good for commuting • Transportation</div>
-          <p style="margin:10px 0 0;">
-            <a class="btn" href="detail.html">View</a>
-          </p>
-        </div>
-      </article>
+      <div class="item-card">
+        <img src="images/bike.jpg" alt="Bike">
+        <p><strong>Campus Bike</strong> <span class="price">$120</span></p>
+        <a class="btn" href="detail.html">View</a>
+      </div>
     </div>
   </section>
 
   <footer>
-    <div class="card footbox">
-      <div>
-        <strong>Contact:</strong> cometmarket@utdallas.edu (example) • <strong>Phone:</strong> (000) 000-0000
-      </div>
-      <div>© 2025 Comet Market • UTD Student Project</div>
+    <div class="footer-box">
+      <p><strong>Contact:</strong> cometmarket@utdallas.edu (example) | (000) 000-0000</p>
+      <p>© 2025 Comet Market — UTD Student Project</p>
     </div>
   </footer>
+
 </main>
+</body>
+</html>
+
 
 </body>
 </html>
