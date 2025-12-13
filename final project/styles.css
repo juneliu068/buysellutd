@@ -1,1 +1,37 @@
+/* FLEXBOX MENU */
+.menu {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  padding: 16px;
+  border: 2px solid #d6ddff;
+  border-radius: 10px;
+  background: #ffffff;
+}
+
+.logo {
+  font-weight: bold;
+  text-decoration: none;
+  color: #2b59ff;
+}
+
+.menu-links {
+  list-style: none;   
+  display: flex;        
+  gap: 16px;            
+  margin: 0;
+  padding: 0;
+}
+
+.menu-links a {
+  text-decoration: none;
+  color: #1f2937;
+  padding: 6px 10px;
+  border-radius: 8px;
+}
+
+.menu-links a:hover {
+  background: #f6f8ff;
+}
 
