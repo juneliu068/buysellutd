@@ -1,7 +1,14 @@
-/* -----------------------------
-   FONTS (Google Webfonts Helper)
-   Put your downloaded .woff2 files in /fonts
--------------------------------- */
+/* =========================================
+   Beginner CSS for Comet Market
+   Palette:
+   #393E41 (gray)
+   #7FB069 (green)
+   #FFDAC6 (peach)
+   #FA9500 (orange)
+   #EB6424 (red-orange)
+========================================= */
+
+/* ---- Fonts (Google Webfonts Helper) ---- */
 @font-face {
   font-family: "Inter";
   src: url("fonts/inter-regular.woff2") format("woff2");
@@ -24,132 +31,174 @@
   font-display: swap;
 }
 
-/* -----------------------------
-   FLUID TYPE (very simple)
--------------------------------- */
-body{
-  /* fluid base text size */
-  font-size: clamp(16px, 1.2vw + 12px, 20px);
-  font-family: "Inter", Arial, sans-serif;
-  margin: 0;
-  color: #393E41;
-  background: #FFDAC6; /* palette */
+/* ---- Fluid type (simple) ---- */
+:root{
+  --text: clamp(16px, 1vw + 12px, 20px);
+  --h1: clamp(24px, 2vw + 14px, 36px);
+  --h2: clamp(20px, 1.6vw + 12px, 30px);
+  --h3: clamp(18px, 1.2vw + 12px, 24px);
+
+  --gray: #393E41;
+  --green: #7FB069;
+  --peach: #FFDAC6;
+  --orange: #FA9500;
+  --redorange: #EB6424;
 }
 
-/* fluid headings */
-h1{ font-size: clamp(22px, 2vw + 14px, 34px); margin: 0; }
-h2{ font-size: clamp(20px, 1.8vw + 12px, 30px); margin: 0 0 6px; }
-h3{ font-size: clamp(18px, 1.4vw + 12px, 24px); margin: 0 0 10px; }
+/* ---- Basic reset ---- */
+*{ box-sizing: border-box; }
+body{
+  margin: 0;
+  font-family: "Inter", Arial, sans-serif;
+  font-size: var(--text);
+  color: var(--gray);
 
-/* -----------------------------
-   BASIC LINKS
--------------------------------- */
-a{ color: #393E41; }
-a:hover{ color: #EB6424; }
+  /* Ombre background (soft + readable) */
+  background: linear-gradient(
+    135deg,
+    var(--peach) 0%,
+    #ffffff 35%,
+    rgba(127,176,105,0.35) 70%,
+    rgba(250,149,0,0.22) 88%,
+    rgba(235,100,36,0.18) 100%
+  );
+  min-height: 100vh;
+}
+img{ max-width: 100%; display: block; }
+a{ color: inherit; }
 
-/* -----------------------------
-   PAGE WRAPPER
--------------------------------- */
+/* ---- Page width wrapper ---- */
 .wrap{
   width: 92%;
   max-width: 1100px;
   margin: 0 auto;
 }
 
-/* -----------------------------
-   HEADER + NAV (Flexbox)
--------------------------------- */
+/* =========================================
+   Header + Nav (Flexbox)
+========================================= */
 header{
-  background: #393E41;
+  background: var(--green);
+  border-bottom: 4px solid var(--gray);
   padding: 14px 0;
 }
 .topbar{
-  display: flex;            /* flex requirement */
+  display: flex;
   align-items: center;
   justify-content: space-between;
   gap: 12px;
+  flex-wrap: wrap;
 }
 
+/* Brand */
 .brand{
   text-decoration: none;
-  color: white;
   display: flex;
   align-items: center;
   gap: 10px;
+  color: var(--gray);
 }
 .logo-box{
-  width: 32px;
-  height: 32px;
-  border-radius: 8px;
-  background: #FA9500; /* palette */
+  width: 34px;
+  height: 34px;
+  border-radius: 9px;
+  background: var(--redorange);
+  border: 2px solid var(--gray);
 }
 .brand-title{
   font-family: "Fjord One", serif;
   letter-spacing: 0.3px;
+  font-size: var(--h3);
 }
 
+/* Nav links */
 nav{
-  display: flex;            /* flex requirement */
+  display: flex;
   gap: 8px;
   flex-wrap: wrap;
 }
 nav a{
-  color: white;
   text-decoration: none;
-  padding: 7px 10px;
+  padding: 7px 11px;
   border-radius: 999px;
-  background: rgba(255,255,255,0.10);
-}
-nav a:hover{
-  background: rgba(255,255,255,0.25);
+  background: rgba(255,255,255,0.75);
+  border: 2px solid rgba(57,62,65,0.25);
+  font-size: 0.95em;
 }
 
-/* -----------------------------
-   SECTIONS + CARDS
--------------------------------- */
+/* =========================================
+   Simple hover animation (VERY beginner)
+   Just changes color
+========================================= */
+nav a:hover{
+  background: var(--orange);
+  color: #fff;
+  border-color: var(--gray);
+}
+
+/* =========================================
+   Headings + spacing
+========================================= */
+h1{ font-size: var(--h1); margin: 0; }
+h2{ font-size: var(--h2); margin: 0 0 6px; font-family: "Fjord One", serif; }
+h3{ font-size: var(--h3); margin: 0 0 10px; font-family: "Fjord One", serif; }
+
 .section{
   margin: 16px 0;
 }
+
+/* =========================================
+   Cards (simple + readable)
+========================================= */
 .card{
-  background: white;
+  background: rgba(255,255,255,0.88);
+  border: 2px solid rgba(57,62,65,0.18);
   border-radius: 12px;
   padding: 14px;
-  border: 2px solid #7FB069; /* palette */
 }
 
-/* -----------------------------
-   BUTTON (simple hover animation)
--------------------------------- */
+/* =========================================
+   Buttons (simple hover animation)
+========================================= */
 .btn{
   display: inline-block;
   padding: 10px 12px;
   border-radius: 10px;
-  background: #393E41;
-  color: white;
+  background: var(--gray);
+  color: #fff;
   text-decoration: none;
   font-weight: 700;
   border: none;
   cursor: pointer;
 
-  /* simple animation */
+  /* beginner animation */
   transition: background 0.2s;
 }
 .btn:hover{
-  background: #EB6424; /* palette */
+  background: var(--redorange);
 }
 .btn-green{
-  background: #7FB069;
-  color: #393E41;
+  background: var(--orange);
+  color: var(--gray);
 }
 .btn-green:hover{
-  background: #FA9500;
+  background: var(--redorange);
+  color: #fff;
 }
 
-/* -----------------------------
-   HOME featured grid (CSS Grid)
--------------------------------- */
+/* =========================================
+   Prices
+========================================= */
+.price{
+  font-weight: 700;
+  color: var(--redorange);
+}
+
+/* =========================================
+   Home featured grid (CSS Grid)
+========================================= */
 .grid3{
-  display: grid;            /* grid requirement */
+  display: grid;
   grid-template-columns: repeat(3, 1fr);
   gap: 12px;
 }
@@ -158,17 +207,14 @@ nav a:hover{
   height: 150px;
   object-fit: cover;
   border-radius: 10px;
-}
-.price{
-  font-weight: 700;
-  color: #EB6424;
+  border: 2px solid rgba(57,62,65,0.12);
 }
 
-/* -----------------------------
-   BROWSE layout (CSS Grid)
--------------------------------- */
+/* =========================================
+   Browse page layout (CSS Grid)
+========================================= */
 .browse-layout{
-  display: grid;            /* grid requirement */
+  display: grid;
   grid-template-columns: 260px 1fr;
   gap: 12px;
 }
@@ -178,19 +224,26 @@ nav a:hover{
   gap: 12px;
 }
 
-/* simple form styles */
-label{ display:block; margin: 10px 0 6px; }
+/* =========================================
+   Forms (simple)
+========================================= */
+label{
+  display: block;
+  margin: 10px 0 6px;
+  font-weight: 700;
+}
 input, select, textarea{
   width: 100%;
   padding: 10px;
   border-radius: 10px;
-  border: 2px solid #393E41;
+  border: 2px solid rgba(57,62,65,0.35);
   font: inherit;
+  background: #fff;
 }
 
-/* -----------------------------
-   DETAIL layout (simple)
--------------------------------- */
+/* =========================================
+   Detail layout (simple grid)
+========================================= */
 .detail-layout{
   display: grid;
   grid-template-columns: 1fr 1fr;
@@ -201,24 +254,26 @@ input, select, textarea{
   height: 320px;
   object-fit: cover;
   border-radius: 12px;
+  border: 2px solid rgba(57,62,65,0.12);
 }
 
-/* -----------------------------
-   FOOTER (credibility)
--------------------------------- */
+/* =========================================
+   Footer (credibility on every page)
+========================================= */
 footer{
   margin: 18px 0 30px;
 }
 .footer-box{
-  background: #393E41;
-  color: white;
+  background: rgba(57,62,65,0.92);
+  color: #fff;
   border-radius: 12px;
   padding: 14px;
+  border: 2px solid rgba(255,255,255,0.18);
 }
 
-/* -----------------------------
-   MOBILE
--------------------------------- */
+/* =========================================
+   Mobile (easy)
+========================================= */
 @media (max-width: 900px){
   .grid3{ grid-template-columns: 1fr 1fr; }
   .listings-grid{ grid-template-columns: 1fr 1fr; }
