@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Comet Market: post</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+<header>
+<div class="wrap topbar">
+    <a class="brand" href="index.html">
+      <img class="logo-img" src="images/utdlogo.jpeg" alt="Comet Market logo">
+      <div class="brand-title">Comet Market: Post</div>
+    </a>
+
+    <nav>
+      <a class="btn btn-orange" href="index.html">Home</a>
+      <a class="btn btn-orange" href="browse.html">Browse</a>
+      <a class="btn btn-orange" href="post.html">Post</a>
+      <a class="btn btn-orange" href="contact.html">Contact</a>
+    </nav>
+</div>
+</header>
+
+<main class="wrap">
+
+  <section class="section">
+    <h2>Post an Item</h2>
+    <p>Fill out the form to create a listing.</p>
+  </section>
+
+  <section class="section card">
+    <form>
+      <label for="title">Title</label>
+      <input id="title" type="text" placeholder="Example: Desk Chair">
+
+      <label for="price">Price</label>
+      <input id="price" type="text" placeholder="$">
+
+      <label for="category">Category</label>
+      <select id="category">
+        <option>Household</option>
+        <option>Textbooks</option>
+        <option>School Supplies</option>
+        <option>Transportation</option>
+        <option>Electronics</option>
+      </select>
+
+      <label for="desc">Description</label>
+      <textarea id="desc" rows="5" placeholder="Write a short description..."></textarea>
+
+      <label for="photo">Photo (optional)</label>
+      <input id="photo" type="file">
+
+      <div class="spacer">
+        <button class="btn" type="submit">Post Listing</button>
+      </div>
+    </form>
+  </section>
+
+  <footer>
+    <div class="footer-box">
+      <p><strong>Contact:</strong> buysellutd@utdallas.edu | (516) 675-8362</p>
+      <p>© 2025 Comet Market: UTD Student Project</p>
+    </div>
+  </footer>
+
+</main>
+</body>
+</html>
