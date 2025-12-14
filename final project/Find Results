@@ -1,0 +1,89 @@
+Searching 6 files for "category"
+
+~/Downloads/Internet culture/final project/browse.html:
+   36        <h3>Filters</h3>
+   37  
+   38:       <h4 class="filter-title">Category</h4>
+   39      
+   40:     <ul class="category-list simple-categorys">
+   41          <li>
+   42:           <a class="category-text" href="browse.html">
+   43:             <img class="category-img" src="images/icons/all.jpeg" alt="">
+   44              All
+   45            </a>
+   ..
+   47  
+   48          <li>
+   49:           <a class="category-text" href="browse.html?category=Household">
+   50:             <img class="category-img" src="images/icons/house.png" alt="">
+   51              Household
+   52            </a>
+   53          </li>
+   54          <li>
+   55:           <a class="category-text" href="browse.html?category=Textbooks">
+   56:             <img class="category-img" src="images/icons/textbook.jpeg" alt="">
+   57              Textbooks
+   58            </a>
+   59          </li>
+   60          <li>
+   61:           <a class="category-text" href="browse.html?category=SchoolSupplies">
+   62:             <img class="category-img" src="images/icons/pencil.jpeg" alt="">
+   63              School Supplies
+   64            </a>
+   ..
+   66  
+   67          <li>
+   68:           <a class="category-text" href="browse.html?category=Transportation">
+   69:             <img class="category-img" src="images/icons/bike.jpeg" alt="">
+   70              Transportation
+   71            </a>
+   ..
+   73  
+   74          <li>
+   75:           <a class="category-text" href="browse.html?category=Electronics">
+   76:             <img class="category-img" src="images/icons/laptop.jpeg" alt="">
+   77              Electronics
+   78            </a>
+
+~/Downloads/Internet culture/final project/detail.html:
+   41        <p class="price">$80</p>
+   42  
+   43:       <p><strong>Category:</strong> Household</p>
+   44        <p><strong>Condition:</strong> Good</p>
+   45        <p><strong>Pickup:</strong> Near campus</p>
+
+~/Downloads/Internet culture/final project/post.html:
+   40        <input id="price" type="text" placeholder="$">
+   41  
+   42:       <label for="category">Category</label>
+   43:       <select id="category">
+   44          <option>Household</option>
+   45          <option>Textbooks</option>
+
+~/Downloads/Internet culture/final project/styles.css:
+  258  
+  259  
+  260: .category-list {
+  261    list-style: none;
+  262    padding: 0;
+  ...
+  266  }
+  267  
+  268: /* category side bar with little icons  */
+  269: .category-text {
+  270    display: flex;
+  271    align-items: center;
+  ...
+  276  }
+  277  
+  278: .category-text:hover {
+  279    text-decoration: underline;
+  280    color: #EB6424;
+  281  }
+  282  
+  283: /* category icons */
+  284: .category-img {
+  285    width: 30px;
+  286    height: 30px;
+
+30 matches across 4 files
